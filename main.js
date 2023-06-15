@@ -7,6 +7,9 @@ const shoppingCart = document.querySelector('.shopping-cart-container');
 const cardsContainer = document.querySelector('.cards-container');
 const productDetail = document.querySelector('.product-detail');
 const productDetailClose = document.querySelector('.detail-close');
+const mainContainer = document.querySelector('.main-container');
+
+mainContainer.addEventListener('click', closeAll);
 
 navEmail.addEventListener('click', () => {
     toggleDisplay(desktopMenu);
@@ -19,6 +22,12 @@ menu.addEventListener('click', () => {
 cart.addEventListener('click', toggleShoppingCart);
 
 productDetailClose.addEventListener('click', closeProductDetail);
+
+function closeAll() {
+    shoppingCart.classList.add('inactive');
+    mobileMenu.classList.add('inactive');
+    desktopMenu.classList.add('inactive');
+}
 
 function toggleDisplay(element) {
     shoppingCart.classList.add('inactive');
