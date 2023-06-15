@@ -5,6 +5,7 @@ const mobileMenu = document.querySelector('.mobile-menu');
 const cart = document.querySelector('.navbar-shopping-cart');
 const shoppingCart = document.querySelector('.shopping-cart-container');
 const cardsContainer = document.querySelector('.cards-container');
+const productDetail = document.querySelector('.product-detail');
 
 navEmail.addEventListener('click', () => {
     toggleDisplay(desktopMenu);
@@ -18,6 +19,7 @@ cart.addEventListener('click', toggleShoppingCart);
 
 function toggleDisplay(element) {
     shoppingCart.classList.add('inactive');
+    productDetail.classList.add('inactive')
     element.classList.toggle('inactive');
 }
 
@@ -85,7 +87,7 @@ function renderProducts(arr) {
         productImg.setAttribute('src', product.image);
 
         const productInfo = document.createElement('div');
-        productInfo.classList.add('product-info');
+        productInfo.classList.add('product-info-cart');
 
         const productInfoDiv = document.createElement('div');
 
